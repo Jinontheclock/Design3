@@ -1,0 +1,630 @@
+import { Wine } from '@/types/wine';
+
+export const wines: Wine[] = [
+  {
+    id: '1',
+    name: 'Château Margaux',
+    type: 'red',
+    region: 'Bordeaux',
+    country: 'France',
+    grapeVarieties: ['Cabernet Sauvignon', 'Merlot', 'Cabernet Franc'],
+    price: 450,
+    image: '/assets/images/default.svg',
+    alcoholContent: 13.5,
+    vintage: 2015,
+    tastingNotes: {
+      appearance: 'Deep ruby red with garnet reflections',
+      nose: 'Complex aromas of blackcurrant, cedar, and violets',
+      palate: 'Full-bodied with silky tannins, flavors of dark berries and spice',
+      finish: 'Long, elegant finish with notes of tobacco and dark chocolate'
+    },
+    foodPairings: ['Grilled steak', 'Lamb chops', 'Aged cheese'],
+    servingTemperature: '16-18°C (61-64°F)',
+    description: 'A prestigious Bordeaux blend showcasing the elegance and complexity of the Margaux appellation.'
+  },
+  {
+    id: '2',
+    name: 'Cloudy Bay Sauvignon Blanc',
+    type: 'white',
+    region: 'Marlborough',
+    country: 'New Zealand',
+    grapeVarieties: ['Sauvignon Blanc'],
+    price: 35,
+    image: '/assets/images/default.svg',
+    alcoholContent: 13.0,
+    vintage: 2022,
+    tastingNotes: {
+      appearance: 'Pale straw with green hues',
+      nose: 'Vibrant aromas of passionfruit, lime, and fresh herbs',
+      palate: 'Crisp and refreshing with tropical fruit flavors and zesty acidity',
+      finish: 'Clean, citrus-driven finish'
+    },
+    foodPairings: ['Oysters', 'Grilled fish', 'Goat cheese salad'],
+    servingTemperature: '8-10°C (46-50°F)',
+    description: 'An iconic New Zealand Sauvignon Blanc with exceptional purity and intensity.'
+  },
+  {
+    id: '3',
+    name: 'Moët & Chandon Brut Impérial',
+    type: 'sparkling',
+    region: 'Champagne',
+    country: 'France',
+    grapeVarieties: ['Pinot Noir', 'Chardonnay', 'Pinot Meunier'],
+    price: 55,
+    image: '/assets/images/default.svg',
+    alcoholContent: 12.0,
+    tastingNotes: {
+      appearance: 'Bright golden color with fine, persistent bubbles',
+      nose: 'Fresh fruit aromas with hints of brioche and white flowers',
+      palate: 'Elegant and balanced with flavors of apple, pear, and citrus',
+      finish: 'Smooth, lingering finish with subtle minerality'
+    },
+    foodPairings: ['Caviar', 'Smoked salmon', 'Fresh fruit'],
+    servingTemperature: '6-8°C (43-46°F)',
+    description: 'The iconic Champagne that embodies celebration and elegance.'
+  },
+  {
+    id: '4',
+    name: 'Whispering Angel Rosé',
+    type: 'rose',
+    region: 'Provence',
+    country: 'France',
+    grapeVarieties: ['Grenache', 'Cinsault', 'Rolle'],
+    price: 25,
+    image: '/assets/images/default.svg',
+    alcoholContent: 13.0,
+    vintage: 2023,
+    tastingNotes: {
+      appearance: 'Delicate pale pink color',
+      nose: 'Aromas of strawberry, white peach, and citrus blossom',
+      palate: 'Light and crisp with flavors of red berries and melon',
+      finish: 'Fresh, dry finish with mineral notes'
+    },
+    foodPairings: ['Grilled vegetables', 'Mediterranean seafood', 'Fresh salads'],
+    servingTemperature: '8-10°C (46-50°F)',
+    description: 'A benchmark Provence rosé that defines the category with its elegance and refreshing character.'
+  },
+  {
+    id: '5',
+    name: 'Penfolds Grange',
+    type: 'red',
+    region: 'South Australia',
+    country: 'Australia',
+    grapeVarieties: ['Shiraz', 'Cabernet Sauvignon'],
+    price: 650,
+    image: '/assets/images/default.svg',
+    alcoholContent: 14.5,
+    vintage: 2016,
+    tastingNotes: {
+      appearance: 'Deep purple-red with brilliant clarity',
+      nose: 'Intense aromas of blackberry, plum, and dark chocolate with oak spice',
+      palate: 'Powerful and concentrated with layers of dark fruit, licorice, and mocha',
+      finish: 'Exceptionally long finish with fine-grained tannins'
+    },
+    foodPairings: ['Wagyu beef', 'Braised short ribs', 'Mushroom risotto'],
+    servingTemperature: '16-18°C (61-64°F)',
+    description: 'Australia\'s most celebrated wine, representing the pinnacle of Shiraz winemaking.'
+  },
+  {
+    id: '6',
+    name: 'Chablis Grand Cru Les Clos',
+    type: 'white',
+    region: 'Burgundy',
+    country: 'France',
+    grapeVarieties: ['Chardonnay'],
+    price: 95,
+    image: '/assets/images/default.svg',
+    alcoholContent: 13.0,
+    vintage: 2020,
+    tastingNotes: {
+      appearance: 'Pale gold with green reflections',
+      nose: 'Mineral-driven with notes of green apple, lemon zest, and flint',
+      palate: 'Precise and pure with steely acidity and flavors of citrus and wet stone',
+      finish: 'Lengthy, mineral finish with saline notes'
+    },
+    foodPairings: ['Fresh oysters', 'Lobster', 'Sushi'],
+    servingTemperature: '10-12°C (50-54°F)',
+    description: 'The epitome of unoaked Chardonnay, showcasing purity and terroir expression.'
+  },
+  {
+    id: '7',
+    name: 'Barbera d\'Asti',
+    type: 'red',
+    region: 'Piedmont',
+    country: 'Italy',
+    grapeVarieties: ['Barbera'],
+    price: 22,
+    image: '/assets/images/default.svg',
+    alcoholContent: 13.5,
+    vintage: 2021,
+    tastingNotes: {
+      appearance: 'Ruby red with purple highlights',
+      nose: 'Fresh aromas of cherry, raspberry, and herbs',
+      palate: 'Medium-bodied with bright acidity, juicy red fruit flavors',
+      finish: 'Clean, refreshing finish with soft tannins'
+    },
+    foodPairings: ['Pasta with tomato sauce', 'Pizza', 'Grilled chicken'],
+    servingTemperature: '14-16°C (57-61°F)',
+    description: 'A versatile Italian red with vibrant acidity and food-friendly character.'
+  },
+  {
+    id: '8',
+    name: 'Riesling Kabinett',
+    type: 'white',
+    region: 'Mosel',
+    country: 'Germany',
+    grapeVarieties: ['Riesling'],
+    price: 28,
+    image: '/assets/images/default.svg',
+    alcoholContent: 9.0,
+    vintage: 2022,
+    tastingNotes: {
+      appearance: 'Pale yellow with green tints',
+      nose: 'Aromatic notes of white peach, apple, and floral hints',
+      palate: 'Off-dry with crisp acidity, flavors of citrus and stone fruit',
+      finish: 'Balanced finish with residual sweetness and minerality'
+    },
+    foodPairings: ['Spicy Asian cuisine', 'Pork schnitzel', 'Apple strudel'],
+    servingTemperature: '8-10°C (46-50°F)',
+    description: 'An elegant German Riesling balancing sweetness and acidity perfectly.'
+  },
+  {
+    id: '9',
+    name: 'Prosecco Superiore DOCG',
+    type: 'sparkling',
+    region: 'Veneto',
+    country: 'Italy',
+    grapeVarieties: ['Glera'],
+    price: 18,
+    image: '/assets/images/default.svg',
+    alcoholContent: 11.5,
+    tastingNotes: {
+      appearance: 'Pale straw yellow with fine bubbles',
+      nose: 'Fruity aromas of green apple, pear, and white flowers',
+      palate: 'Light and refreshing with flavors of citrus and peach',
+      finish: 'Crisp, clean finish with subtle almond notes'
+    },
+    foodPairings: ['Appetizers', 'Light seafood', 'Fruit-based desserts'],
+    servingTemperature: '6-8°C (43-46°F)',
+    description: 'A delightful Italian sparkling wine perfect for celebrations and aperitifs.'
+  },
+  {
+    id: '10',
+    name: 'Pinot Noir Reserve',
+    type: 'red',
+    region: 'Willamette Valley',
+    country: 'USA',
+    grapeVarieties: ['Pinot Noir'],
+    price: 45,
+    image: '/assets/images/default.svg',
+    alcoholContent: 13.5,
+    vintage: 2019,
+    tastingNotes: {
+      appearance: 'Translucent ruby red',
+      nose: 'Elegant aromas of cherry, strawberry, and earthy notes',
+      palate: 'Silky texture with flavors of red fruit, mushroom, and spice',
+      finish: 'Smooth finish with gentle tannins and lingering fruit'
+    },
+    foodPairings: ['Duck breast', 'Salmon', 'Mushroom dishes'],
+    servingTemperature: '14-16°C (57-61°F)',
+    description: 'An expressive Oregon Pinot Noir showcasing the region\'s terroir.'
+  },
+  {
+    id: '11',
+    name: 'Albariño',
+    type: 'white',
+    region: 'Rías Baixas',
+    country: 'Spain',
+    grapeVarieties: ['Albariño'],
+    price: 24,
+    image: '/assets/images/default.svg',
+    alcoholContent: 12.5,
+    vintage: 2023,
+    tastingNotes: {
+      appearance: 'Bright yellow with golden highlights',
+      nose: 'Aromatic notes of apricot, citrus, and sea breeze',
+      palate: 'Crisp and mineral-driven with flavors of peach and lime',
+      finish: 'Saline, refreshing finish with bright acidity'
+    },
+    foodPairings: ['Shellfish', 'Ceviche', 'Paella'],
+    servingTemperature: '8-10°C (46-50°F)',
+    description: 'A coastal Spanish white wine with remarkable freshness and complexity.'
+  },
+  {
+    id: '12',
+    name: 'Côtes du Rhône Villages',
+    type: 'red',
+    region: 'Rhône Valley',
+    country: 'France',
+    grapeVarieties: ['Grenache', 'Syrah', 'Mourvèdre'],
+    price: 19,
+    image: '/assets/images/default.svg',
+    alcoholContent: 14.0,
+    vintage: 2020,
+    tastingNotes: {
+      appearance: 'Deep ruby red',
+      nose: 'Aromas of ripe red berries, herbs, and black pepper',
+      palate: 'Medium to full-bodied with flavors of cherry, plum, and garrigue',
+      finish: 'Warm finish with soft tannins and spice'
+    },
+    foodPairings: ['Roasted lamb', 'Ratatouille', 'Hard cheeses'],
+    servingTemperature: '15-17°C (59-63°F)',
+    description: 'A classic Southern Rhône blend offering excellent value and character.'
+  },
+  {
+    id: '13',
+    name: 'Grüner Veltliner',
+    type: 'white',
+    region: 'Wachau',
+    country: 'Austria',
+    grapeVarieties: ['Grüner Veltliner'],
+    price: 30,
+    image: '/assets/images/default.svg',
+    alcoholContent: 12.5,
+    vintage: 2022,
+    tastingNotes: {
+      appearance: 'Pale greenish-yellow',
+      nose: 'Fresh aromas of green apple, white pepper, and citrus',
+      palate: 'Crisp and vibrant with flavors of lime, herbs, and minerality',
+      finish: 'Zesty finish with a peppery note'
+    },
+    foodPairings: ['Austrian schnitzel', 'Asparagus', 'Goat cheese'],
+    servingTemperature: '8-10°C (46-50°F)',
+    description: 'Austria\'s signature white wine with distinctive character and food versatility.'
+  },
+  {
+    id: '14',
+    name: 'Malbec Reserva',
+    type: 'red',
+    region: 'Mendoza',
+    country: 'Argentina',
+    grapeVarieties: ['Malbec'],
+    price: 32,
+    image: '/assets/images/default.svg',
+    alcoholContent: 14.5,
+    vintage: 2019,
+    tastingNotes: {
+      appearance: 'Deep purple-black',
+      nose: 'Rich aromas of blackberry, plum, and violet with oak notes',
+      palate: 'Full-bodied with ripe fruit flavors, chocolate, and vanilla',
+      finish: 'Smooth finish with velvety tannins'
+    },
+    foodPairings: ['Grilled beef', 'Empanadas', 'BBQ ribs'],
+    servingTemperature: '16-18°C (61-64°F)',
+    description: 'A robust Argentine Malbec showcasing the intensity of high-altitude vineyards.'
+  },
+  {
+    id: '15',
+    name: 'Muscadet Sèvre et Maine',
+    type: 'white',
+    region: 'Loire Valley',
+    country: 'France',
+    grapeVarieties: ['Melon de Bourgogne'],
+    price: 16,
+    image: '/assets/images/default.svg',
+    alcoholContent: 12.0,
+    vintage: 2023,
+    tastingNotes: {
+      appearance: 'Very pale yellow with silver reflections',
+      nose: 'Subtle aromas of lemon, green apple, and sea salt',
+      palate: 'Light-bodied with crisp acidity and mineral character',
+      finish: 'Clean, briny finish'
+    },
+    foodPairings: ['Raw oysters', 'Mussels', 'Light fish dishes'],
+    servingTemperature: '8-10°C (46-50°F)',
+    description: 'A classic French seafood wine with remarkable freshness and minerality.'
+  },
+  {
+    id: '16',
+    name: 'Amarone della Valpolicella',
+    type: 'red',
+    region: 'Veneto',
+    country: 'Italy',
+    grapeVarieties: ['Corvina', 'Rondinella', 'Molinara'],
+    price: 75,
+    image: '/assets/images/default.svg',
+    alcoholContent: 15.5,
+    vintage: 2017,
+    tastingNotes: {
+      appearance: 'Deep garnet red',
+      nose: 'Intense aromas of dried cherry, fig, and spice',
+      palate: 'Full-bodied and rich with flavors of raisin, chocolate, and coffee',
+      finish: 'Long, warming finish with sweet tannins'
+    },
+    foodPairings: ['Braised meats', 'Aged Parmesan', 'Dark chocolate'],
+    servingTemperature: '16-18°C (61-64°F)',
+    description: 'A powerful Italian wine made from dried grapes, offering intense flavors and complexity.'
+  },
+  {
+    id: '17',
+    name: 'Viognier',
+    type: 'white',
+    region: 'Condrieu',
+    country: 'France',
+    grapeVarieties: ['Viognier'],
+    price: 42,
+    image: '/assets/images/default.svg',
+    alcoholContent: 13.5,
+    vintage: 2022,
+    tastingNotes: {
+      appearance: 'Golden yellow',
+      nose: 'Aromatic notes of apricot, honeysuckle, and peach',
+      palate: 'Rich and full-bodied with flavors of stone fruit and spice',
+      finish: 'Creamy finish with floral notes'
+    },
+    foodPairings: ['Roasted chicken', 'Lobster', 'Creamy pasta'],
+    servingTemperature: '10-12°C (50-54°F)',
+    description: 'An aromatic Northern Rhône white with luscious texture and complexity.'
+  },
+  {
+    id: '18',
+    name: 'Tempranillo Crianza',
+    type: 'red',
+    region: 'Rioja',
+    country: 'Spain',
+    grapeVarieties: ['Tempranillo'],
+    price: 26,
+    image: '/assets/images/default.svg',
+    alcoholContent: 13.5,
+    vintage: 2019,
+    tastingNotes: {
+      appearance: 'Ruby red with brick hues',
+      nose: 'Aromas of cherry, vanilla, and tobacco',
+      palate: 'Medium-bodied with flavors of red fruit, oak, and leather',
+      finish: 'Smooth finish with integrated tannins'
+    },
+    foodPairings: ['Chorizo', 'Manchego cheese', 'Roasted lamb'],
+    servingTemperature: '15-17°C (59-63°F)',
+    description: 'A classic Spanish red aged in oak barrels, offering elegance and tradition.'
+  },
+  {
+    id: '19',
+    name: 'Sancerre',
+    type: 'white',
+    region: 'Loire Valley',
+    country: 'France',
+    grapeVarieties: ['Sauvignon Blanc'],
+    price: 38,
+    image: '/assets/images/default.svg',
+    alcoholContent: 12.5,
+    vintage: 2022,
+    tastingNotes: {
+      appearance: 'Pale gold with green reflections',
+      nose: 'Vibrant aromas of grapefruit, gooseberry, and flint',
+      palate: 'Crisp and mineral-driven with citrus and herbal notes',
+      finish: 'Precise, chalky finish with lingering acidity'
+    },
+    foodPairings: ['Goat cheese', 'Seafood', 'Green salads'],
+    servingTemperature: '8-10°C (46-50°F)',
+    description: 'A benchmark Loire Valley Sauvignon Blanc with terroir expression and elegance.'
+  },
+  {
+    id: '20',
+    name: 'Zinfandel Old Vine',
+    type: 'red',
+    region: 'Sonoma County',
+    country: 'USA',
+    grapeVarieties: ['Zinfandel'],
+    price: 36,
+    image: '/assets/images/default.svg',
+    alcoholContent: 14.8,
+    vintage: 2020,
+    tastingNotes: {
+      appearance: 'Deep ruby with purple edges',
+      nose: 'Bold aromas of blackberry, black pepper, and spice',
+      palate: 'Full-bodied with jammy fruit flavors and hints of tobacco',
+      finish: 'Rich finish with warming alcohol and sweet tannins'
+    },
+    foodPairings: ['BBQ brisket', 'Pulled pork', 'Spicy sausage'],
+    servingTemperature: '16-18°C (61-64°F)',
+    description: 'A robust California Zinfandel from old vines, delivering power and concentration.'
+  },
+  {
+    id: '21',
+    name: 'Cava Brut Nature',
+    type: 'sparkling',
+    region: 'Penedès',
+    country: 'Spain',
+    grapeVarieties: ['Macabeo', 'Xarel·lo', 'Parellada'],
+    price: 20,
+    image: '/assets/images/default.svg',
+    alcoholContent: 11.5,
+    tastingNotes: {
+      appearance: 'Pale yellow with fine, persistent bubbles',
+      nose: 'Fresh aromas of green apple, almond, and brioche',
+      palate: 'Dry and crisp with citrus flavors and minerality',
+      finish: 'Clean, bone-dry finish'
+    },
+    foodPairings: ['Tapas', 'Fried seafood', 'Manchego cheese'],
+    servingTemperature: '6-8°C (43-46°F)',
+    description: 'A premium Spanish sparkling wine made in the traditional method, offering excellent value.'
+  },
+  {
+    id: '22',
+    name: 'Pouilly-Fuissé',
+    type: 'white',
+    region: 'Burgundy',
+    country: 'France',
+    grapeVarieties: ['Chardonnay'],
+    price: 48,
+    image: '/assets/images/default.svg',
+    alcoholContent: 13.0,
+    vintage: 2021,
+    tastingNotes: {
+      appearance: 'Golden yellow',
+      nose: 'Rich aromas of ripe peach, hazelnut, and butter',
+      palate: 'Full-bodied with flavors of citrus, vanilla, and minerality',
+      finish: 'Creamy finish with balanced oak influence'
+    },
+    foodPairings: ['Roasted chicken', 'Sea bass', 'Creamy risotto'],
+    servingTemperature: '10-12°C (50-54°F)',
+    description: 'A rich Burgundian Chardonnay with complexity and elegance from the Mâconnais.'
+  },
+  {
+    id: '23',
+    name: 'Sangiovese Riserva',
+    type: 'red',
+    region: 'Chianti Classico',
+    country: 'Italy',
+    grapeVarieties: ['Sangiovese'],
+    price: 40,
+    image: '/assets/images/default.svg',
+    alcoholContent: 13.5,
+    vintage: 2018,
+    tastingNotes: {
+      appearance: 'Ruby red with garnet reflections',
+      nose: 'Aromas of cherry, violet, and leather with herbal notes',
+      palate: 'Medium to full-bodied with bright acidity and cherry flavors',
+      finish: 'Dry finish with firm tannins and earthy notes'
+    },
+    foodPairings: ['Tuscan steak', 'Tomato-based pasta', 'Pecorino cheese'],
+    servingTemperature: '16-18°C (61-64°F)',
+    description: 'A classic Tuscan red wine showcasing Sangiovese\'s elegance and aging potential.'
+  },
+  {
+    id: '24',
+    name: 'Chenin Blanc',
+    type: 'white',
+    region: 'Vouvray',
+    country: 'France',
+    grapeVarieties: ['Chenin Blanc'],
+    price: 29,
+    image: '/assets/images/default.svg',
+    alcoholContent: 12.5,
+    vintage: 2022,
+    tastingNotes: {
+      appearance: 'Pale gold with green tints',
+      nose: 'Aromatic notes of honey, quince, and chamomile',
+      palate: 'Off-dry with crisp acidity, flavors of apple and apricot',
+      finish: 'Balanced finish with mineral undertones'
+    },
+    foodPairings: ['Pork tenderloin', 'Thai curry', 'Soft cheeses'],
+    servingTemperature: '8-10°C (46-50°F)',
+    description: 'A versatile Loire Valley white with remarkable aging potential and complexity.'
+  },
+  {
+    id: '25',
+    name: 'Grenache Rosé',
+    type: 'rose',
+    region: 'Tavel',
+    country: 'France',
+    grapeVarieties: ['Grenache', 'Cinsault'],
+    price: 22,
+    image: '/assets/images/default.svg',
+    alcoholContent: 13.5,
+    vintage: 2023,
+    tastingNotes: {
+      appearance: 'Deep salmon pink',
+      nose: 'Aromas of strawberry, raspberry, and herbs de Provence',
+      palate: 'Medium-bodied with flavors of red berries and spice',
+      finish: 'Dry, refreshing finish with structure'
+    },
+    foodPairings: ['Grilled fish', 'Bouillabaisse', 'Ratatouille'],
+    servingTemperature: '10-12°C (50-54°F)',
+    description: 'A fuller-bodied rosé from the only exclusively rosé appellation in France.'
+  },
+  {
+    id: '26',
+    name: 'Carmenère',
+    type: 'red',
+    region: 'Colchagua Valley',
+    country: 'Chile',
+    grapeVarieties: ['Carmenère'],
+    price: 21,
+    image: '/assets/images/default.svg',
+    alcoholContent: 14.0,
+    vintage: 2020,
+    tastingNotes: {
+      appearance: 'Deep purple-red',
+      nose: 'Aromas of black cherry, green pepper, and dark chocolate',
+      palate: 'Medium to full-bodied with soft tannins and spicy notes',
+      finish: 'Smooth finish with herbal complexity'
+    },
+    foodPairings: ['Grilled meats', 'Empanadas', 'Bean stews'],
+    servingTemperature: '15-17°C (59-63°F)',
+    description: 'Chile\'s signature grape variety offering unique character and approachability.'
+  },
+  {
+    id: '27',
+    name: 'Gewürztraminer',
+    type: 'white',
+    region: 'Alsace',
+    country: 'France',
+    grapeVarieties: ['Gewürztraminer'],
+    price: 32,
+    image: '/assets/images/default.svg',
+    alcoholContent: 13.5,
+    vintage: 2021,
+    tastingNotes: {
+      appearance: 'Deep golden yellow',
+      nose: 'Intensely aromatic with lychee, rose petal, and spice',
+      palate: 'Full-bodied and slightly off-dry with exotic fruit flavors',
+      finish: 'Rich finish with low acidity and lingering spice'
+    },
+    foodPairings: ['Spicy Asian dishes', 'Foie gras', 'Blue cheese'],
+    servingTemperature: '8-10°C (46-50°F)',
+    description: 'An aromatic Alsatian white wine with distinctive floral and spice character.'
+  },
+  {
+    id: '28',
+    name: 'Nebbiolo',
+    type: 'red',
+    region: 'Barolo',
+    country: 'Italy',
+    grapeVarieties: ['Nebbiolo'],
+    price: 85,
+    image: '/assets/images/default.svg',
+    alcoholContent: 14.0,
+    vintage: 2017,
+    tastingNotes: {
+      appearance: 'Garnet red with orange rim',
+      nose: 'Complex aromas of rose, tar, cherry, and truffle',
+      palate: 'Full-bodied with firm tannins, flavors of red fruit and earth',
+      finish: 'Long, powerful finish with significant aging potential'
+    },
+    foodPairings: ['Truffle risotto', 'Braised beef', 'Aged cheeses'],
+    servingTemperature: '16-18°C (61-64°F)',
+    description: 'One of Italy\'s most prestigious wines, known as the "King of Wines."'
+  },
+  {
+    id: '29',
+    name: 'Verdejo',
+    type: 'white',
+    region: 'Rueda',
+    country: 'Spain',
+    grapeVarieties: ['Verdejo'],
+    price: 17,
+    image: '/assets/images/default.svg',
+    alcoholContent: 13.0,
+    vintage: 2023,
+    tastingNotes: {
+      appearance: 'Pale yellow with greenish hues',
+      nose: 'Fresh aromas of fennel, citrus, and tropical fruit',
+      palate: 'Crisp and vibrant with flavors of grapefruit and herbs',
+      finish: 'Clean finish with bitter almond notes'
+    },
+    foodPairings: ['White fish', 'Vegetable tempura', 'Fresh cheeses'],
+    servingTemperature: '6-8°C (43-46°F)',
+    description: 'A refreshing Spanish white wine perfect for warm weather and seafood.'
+  },
+  {
+    id: '30',
+    name: 'Lambrusco',
+    type: 'sparkling',
+    region: 'Emilia-Romagna',
+    country: 'Italy',
+    grapeVarieties: ['Lambrusco'],
+    price: 15,
+    image: '/assets/images/default.svg',
+    alcoholContent: 11.0,
+    tastingNotes: {
+      appearance: 'Deep ruby red with purple foam',
+      nose: 'Fruity aromas of strawberry, cherry, and violet',
+      palate: 'Light-bodied and slightly sweet with red fruit flavors',
+      finish: 'Fresh, fruity finish with gentle bubbles'
+    },
+    foodPairings: ['Charcuterie', 'Pizza', 'Fried foods'],
+    servingTemperature: '8-10°C (46-50°F)',
+    description: 'A fun, slightly sparkling Italian red wine perfect for casual dining.'
+  }
+];
